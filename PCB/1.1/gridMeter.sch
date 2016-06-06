@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:mains-freq-gauge-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,19 +29,17 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:regul-custom
-LIBS:vishay-opto
-LIBS:oscillators
-LIBS:mains-freq-gauge-cache
+LIBS:gridMeter
+LIBS:gridMeter-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date "2016-05-03"
-Rev ""
-Comp ""
+Title "Grid Meter"
+Date "2016-06-03"
+Rev "1.1"
+Comp "The Curious Electric Company (Re-Innovation Ltd)"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -180,7 +177,7 @@ L CONN_3X2 P4
 U 1 1 5644A6CA
 P 5700 6950
 F 0 "P4" H 5700 7200 50  0000 C CNN
-F 1 "CONN_3X2" V 5700 7000 40  0000 C CNN
+F 1 "ISP" V 5700 7000 40  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x03" H 5700 6950 60  0001 C CNN
 F 3 "" H 5700 6950 60  0000 C CNN
 	1    5700 6950
@@ -399,7 +396,7 @@ U 1 1 5715CDCA
 P 2400 4850
 F 0 "C1" H 2425 4950 50  0000 L CNN
 F 1 "100n" H 2425 4750 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Rect_L4_W2.5_P2.5" H 2438 4700 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2.5_P5" H 2438 4700 50  0001 C CNN
 F 3 "" H 2400 4850 50  0000 C CNN
 	1    2400 4850
 	1    0    0    -1  
@@ -420,8 +417,8 @@ L C C2
 U 1 1 5715D5E8
 P 4300 2750
 F 0 "C2" H 4325 2850 50  0000 L CNN
-F 1 "330u" H 4325 2650 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D10_L13_P5" H 4338 2600 50  0001 C CNN
+F 1 "220u" H 4325 2650 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5" H 4338 2600 50  0001 C CNN
 F 3 "" H 4300 2750 50  0000 C CNN
 	1    4300 2750
 	1    0    0    -1  
@@ -431,8 +428,8 @@ L C C3
 U 1 1 5715D7AE
 P 5300 2750
 F 0 "C3" H 5325 2850 50  0000 L CNN
-F 1 "10u" H 5325 2650 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Radial_D5_L11_P2.5" H 5338 2600 50  0001 C CNN
+F 1 "220u" H 5325 2650 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5" H 5338 2600 50  0001 C CNN
 F 3 "" H 5300 2750 50  0000 C CNN
 	1    5300 2750
 	1    0    0    -1  
@@ -465,7 +462,7 @@ U 1 1 57160D39
 P 6600 5200
 F 0 "C4" H 6625 5300 50  0000 L CNN
 F 1 "100n" H 6625 5100 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Rect_L4_W2.5_P2.5" H 6638 5050 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2.5_P5" H 6638 5050 50  0001 C CNN
 F 3 "" H 6600 5200 50  0000 C CNN
 	1    6600 5200
 	1    0    0    -1  
@@ -538,8 +535,8 @@ L CONN_5 P3
 U 1 1 572855AC
 P 9400 2700
 F 0 "P3" V 9350 2700 50  0000 C CNN
-F 1 "CONN_5" V 9450 2700 50  0000 C CNN
-F 2 "jst-connectors:XHP-5" H 9400 2700 60  0001 C CNN
+F 1 "MOTOR" V 9450 2700 50  0000 C CNN
+F 2 "gridMeter:XHP-5" H 9400 2700 60  0001 C CNN
 F 3 "" H 9400 2700 60  0000 C CNN
 	1    9400 2700
 	1    0    0    -1  
@@ -669,7 +666,7 @@ U 1 1 572844CE
 P 7900 1850
 F 0 "C5" H 7925 1950 50  0000 L CNN
 F 1 "100n" H 7925 1750 50  0000 L CNN
-F 2 "Capacitors_ThroughHole:C_Rect_L4_W2.5_P2.5" H 7938 1700 50  0001 C CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2.5_P5" H 7938 1700 50  0001 C CNN
 F 3 "" H 7900 1850 50  0000 C CNN
 	1    7900 1850
 	1    0    0    -1  
@@ -742,7 +739,7 @@ U 1 1 573AB351
 P 3100 6900
 F 0 "U3" H 3100 6500 60  0000 C CNN
 F 1 "TCRT5000" H 3100 7300 60  0000 C CNN
-F 2 "vishay-opto:TCRT5000" H 2900 6900 60  0001 C CNN
+F 2 "gridMeter:TCRT5000" H 2900 6900 60  0001 C CNN
 F 3 "" H 2900 6900 60  0000 C CNN
 	1    3100 6900
 	1    0    0    -1  
@@ -799,7 +796,7 @@ U 1 1 573D56BF
 P 2950 4700
 F 0 "U2" H 2950 4700 39  0000 C CNN
 F 1 "TCXO_SMD_4P" H 2950 4900 39  0000 C CNN
-F 2 "oscillators:FOX924" H 2950 4700 39  0001 C CNN
+F 2 "gridMeter:FOX924" H 2950 4700 39  0001 C CNN
 F 3 "" H 2950 4700 39  0000 C CNN
 	1    2950 4700
 	1    0    0    -1  
@@ -809,7 +806,7 @@ L CONN_2 P2
 U 1 1 573EA88B
 P 1850 2800
 F 0 "P2" V 1800 2800 40  0000 C CNN
-F 1 "CONN_2" V 1900 2800 40  0000 C CNN
+F 1 "AC POWER" V 1900 2800 40  0000 C CNN
 F 2 "REInnovationFootprint:TH_CONN_2W" H 1850 2800 60  0001 C CNN
 F 3 "" H 1850 2800 60  0000 C CNN
 	1    1850 2800
@@ -836,7 +833,7 @@ L BARREL_JACK CON1
 U 1 1 573ECDED
 P 1900 2300
 F 0 "CON1" H 1900 2550 60  0000 C CNN
-F 1 "BARREL_JACK" H 1900 2100 60  0000 C CNN
+F 1 "AC POWER" H 1900 2100 60  0000 C CNN
 F 2 "REInnovationFootprint:DC_Power_2_1" H 1900 2300 60  0001 C CNN
 F 3 "" H 1900 2300 60  0000 C CNN
 	1    1900 2300
