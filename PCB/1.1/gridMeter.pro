@@ -1,4 +1,4 @@
-update=Fri 03 Jun 2016 10:58:29 BST
+update=10/06/2016 19:08:30
 version=1
 last_client=kicad
 [pcbnew]
@@ -37,20 +37,20 @@ SpiceUseNetNumbers=0
 LabSize=60
 [eeschema]
 version=1
-LibDir=
+LibDir=../../../../../../../KiCAD/KiCAD PRETTY/REInnovationFootprint.pretty;../../../../../../../KiCAD/KiCad My Libraries
 [eeschema/libraries]
-LibName1=power
-LibName2=device
-LibName3=transistors
-LibName4=conn
-LibName5=linear
-LibName6=regul
-LibName7=74xx
-LibName8=cmos4000
-LibName9=adc-dac
-LibName10=memory
-LibName11=xilinx
-LibName12=special
+LibName1=gridMeter-rescue
+LibName2=power
+LibName3=device
+LibName4=transistors
+LibName5=conn
+LibName6=linear
+LibName7=regul
+LibName8=74xx
+LibName9=cmos4000
+LibName10=adc-dac
+LibName11=memory
+LibName12=xilinx
 LibName13=microcontrollers
 LibName14=dsp
 LibName15=microchip
@@ -70,3 +70,4 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=gridMeter
+LibName32=D:/Google Drive/KiCAD/KiCad My Libraries/matts_components

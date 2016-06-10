@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:gridMeter-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,7 +11,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:special
 LIBS:microcontrollers
 LIBS:dsp
 LIBS:microchip
@@ -30,6 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:gridMeter
+LIBS:matts_components
 LIBS:gridMeter-cache
 EELAYER 25 0
 EELAYER END
@@ -37,8 +38,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Grid Meter"
-Date "2016-06-03"
-Rev "1.1"
+Date "2016-06-10"
+Rev "1.2"
 Comp "The Curious Electric Company (Re-Innovation Ltd)"
 Comment1 ""
 Comment2 ""
@@ -50,9 +51,18 @@ L ATTINY84A-SS IC1
 U 1 1 5644A04C
 P 7950 5300
 F 0 "IC1" H 7100 6050 40  0000 C CNN
-F 1 "ATTINY84A-SS" H 8600 4550 40  0000 C CNN
+F 1 " ATTINY84A-PU" H 8600 4550 40  0000 C CNN
 F 2 "Housings_DIP:DIP-14_W7.62mm" H 7950 5100 35  0001 C CIN
-F 3 "" H 7950 5300 60  0000 C CNN
+F 3 "http://docs-europe.electrocomponents.com/webdocs/0fa2/0900766b80fa26b4.pdf" H 7950 5300 60  0001 C CNN
+F 4 "~" H 7950 5300 60  0001 C CNN "Description"
+F 5 "~" H 7950 5300 60  0001 C CNN "Notes"
+F 6 "Atmel" H 7950 5300 60  0001 C CNN "Manufacturer"
+F 7 " ATTINY84A-PU" H 7950 5300 60  0001 C CNN "Manufacturer Part No"
+F 8 "RS" H 7950 5300 60  0001 C CNN "Supplier 1"
+F 9 "738-0684" H 7950 5300 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 7950 5300 60  0001 C CNN "Supplier 2"
+F 11 "~" H 7950 5300 60  0001 C CNN "Supplier 2 Part No"
+F 12 "1.05" H 7950 5300 60  0001 C CNN "Cost"
 	1    7950 5300
 	1    0    0    -1  
 $EndComp
@@ -102,7 +112,7 @@ Wire Wire Line
 	5100 5100 5300 5100
 Connection ~ 5200 5100
 $Comp
-L GND #PWR01
+L GND-RESCUE-gridMeter #PWR01
 U 1 1 5644A16C
 P 6600 6000
 F 0 "#PWR01" H 6600 6000 30  0001 C CNN
@@ -113,7 +123,7 @@ F 3 "" H 6600 6000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L GND-RESCUE-gridMeter #PWR02
 U 1 1 5644A17A
 P 3300 5200
 F 0 "#PWR02" H 3300 5200 30  0001 C CNN
@@ -124,7 +134,7 @@ F 3 "" H 3300 5200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR03
+L GND-RESCUE-gridMeter #PWR03
 U 1 1 5644A180
 P 5200 5700
 F 0 "#PWR03" H 5200 5700 30  0001 C CNN
@@ -204,7 +214,7 @@ MOSI
 Wire Wire Line
 	6200 6800 6200 6700
 $Comp
-L GND #PWR06
+L GND-RESCUE-gridMeter #PWR06
 U 1 1 5644A801
 P 6200 7100
 F 0 "#PWR06" H 6200 7100 30  0001 C CNN
@@ -246,7 +256,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 2200 2700 2900
 $Comp
-L GND #PWR08
+L GND-RESCUE-gridMeter #PWR08
 U 1 1 5644AC7A
 P 2700 2900
 F 0 "#PWR08" H 2700 2900 30  0001 C CNN
@@ -261,7 +271,7 @@ Wire Wire Line
 Wire Wire Line
 	4300 2500 4300 2600
 $Comp
-L GND #PWR09
+L GND-RESCUE-gridMeter #PWR09
 U 1 1 5644AD23
 P 4300 3000
 F 0 "#PWR09" H 4300 3000 30  0001 C CNN
@@ -279,7 +289,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 2800 4800 3000
 $Comp
-L GND #PWR010
+L GND-RESCUE-gridMeter #PWR010
 U 1 1 5644AE0B
 P 4800 3000
 F 0 "#PWR010" H 4800 3000 30  0001 C CNN
@@ -302,7 +312,7 @@ F 3 "" H 5300 2400 60  0000 C CNN
 $EndComp
 Connection ~ 5300 2500
 $Comp
-L GND #PWR012
+L GND-RESCUE-gridMeter #PWR012
 U 1 1 5644AEC4
 P 5300 3000
 F 0 "#PWR012" H 5300 3000 30  0001 C CNN
@@ -348,7 +358,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 7000 6100 7000
 $Comp
-L GND #PWR014
+L GND-RESCUE-gridMeter #PWR014
 U 1 1 5644C040
 P 4300 1900
 F 0 "#PWR014" H 4300 1900 30  0001 C CNN
@@ -467,17 +477,6 @@ F 3 "" H 6600 5200 50  0000 C CNN
 	1    6600 5200
 	1    0    0    -1  
 $EndComp
-$Comp
-L GENERIC-3V3 U1
-U 1 1 57161C0A
-P 1900 4650
-F 0 "U1" H 1700 4850 40  0000 C CNN
-F 1 "LE33CZ-TR" H 1900 4850 40  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Narrow_Oval" H 1900 4750 30  0001 C CIN
-F 3 "" H 1900 4650 60  0000 C CNN
-	1    1900 4650
-	1    0    0    -1  
-$EndComp
 Connection ~ 2400 4600
 Wire Wire Line
 	1900 4900 1900 5100
@@ -504,9 +503,18 @@ L ULN2003 U5
 U 1 1 57283D96
 P 7850 2900
 F 0 "U5" H 7850 3000 70  0000 C CNN
-F 1 "ULN2003" H 7850 2800 70  0000 C CNN
+F 1 "ULN2003" H 7850 2300 70  0000 C CNN
 F 2 "Housings_DIP:DIP-16_W7.62mm_LongPads" H 7850 2900 60  0001 C CNN
-F 3 "" H 7850 2900 60  0000 C CNN
+F 3 "http://docs-europe.electrocomponents.com/webdocs/1294/0900766b81294fa6.pdf" H 7850 2900 60  0001 C CNN
+F 4 "Darlington transistor array" H 7850 2900 60  0001 C CNN "Description"
+F 5 "~" H 7850 2900 60  0001 C CNN "Notes"
+F 6 "Toshiba" H 7850 2900 60  0001 C CNN "Manufacturer"
+F 7 "ULN2003APG" H 7850 2900 60  0001 C CNN "Manufacturer Part No"
+F 8 "RS" H 7850 2900 60  0001 C CNN "Supplier 1"
+F 9 "796-5320" H 7850 2900 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 7850 2900 60  0001 C CNN "Supplier 2"
+F 11 "~" H 7850 2900 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.151" H 7850 2900 60  0001 C CNN "Cost"
 	1    7850 2900
 	1    0    0    -1  
 $EndComp
@@ -646,7 +654,7 @@ F 3 "" H 7900 1600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND-RESCUE-gridMeter #PWR021
 U 1 1 57284A97
 P 7900 2100
 F 0 "#PWR021" H 7900 2100 30  0001 C CNN
@@ -741,13 +749,22 @@ F 0 "U3" H 3100 6500 60  0000 C CNN
 F 1 "TCRT5000" H 3100 7300 60  0000 C CNN
 F 2 "gridMeter:TCRT5000" H 2900 6900 60  0001 C CNN
 F 3 "" H 2900 6900 60  0000 C CNN
+F 4 "Opto-reflective IR sensor" H 3100 6900 60  0001 C CNN "Description"
+F 5 "~" H 3100 6900 60  0001 C CNN "Notes"
+F 6 "~" H 3100 6900 60  0001 C CNN "Manufacturer"
+F 7 "TCRT5000L" H 3100 6900 60  0001 C CNN "Manufacturer Part No"
+F 8 "Aliexpress" H 3100 6900 60  0001 C CNN "Supplier 1"
+F 9 "http://www.aliexpress.com/item/Free-Shipping-100-pcs-TCRT5000L-TCRT5000-Reflective-Infrared-Optical-Sensor-Photoelectric-Switches/1933011720.html" H 3100 6900 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 3100 6900 60  0001 C CNN "Supplier 2"
+F 11 "~" H 3100 6900 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.15" H 3100 6900 60  0001 C CNN "Cost"
 	1    3100 6900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3400 6400 3400 6500
 $Comp
-L GND #PWR022
+L GND-RESCUE-gridMeter #PWR022
 U 1 1 573AB86A
 P 3400 7400
 F 0 "#PWR022" H 3400 7400 30  0001 C CNN
@@ -762,7 +779,7 @@ Wire Wire Line
 Wire Wire Line
 	2800 7300 2800 7400
 $Comp
-L GND #PWR023
+L GND-RESCUE-gridMeter #PWR023
 U 1 1 573AB9CA
 P 2800 7400
 F 0 "#PWR023" H 2800 7400 30  0001 C CNN
@@ -786,7 +803,16 @@ P 4800 2550
 F 0 "U4" H 4950 2354 60  0000 C CNN
 F 1 "7805" H 4800 2750 60  0000 C CNN
 F 2 "TO_SOT_Packages_THT:TO-220_Neutral123_Horizontal" H 4800 2550 60  0001 C CNN
-F 3 "" H 4800 2550 60  0000 C CNN
+F 3 "http://docs-europe.electrocomponents.com/webdocs/12cf/0900766b812cfcbe.pdf" H 4800 2550 60  0001 C CNN
+F 4 "1A 5V regulator." H 4800 2550 60  0001 C CNN "Description"
+F 5 "~" H 4800 2550 60  0001 C CNN "Notes"
+F 6 "Fairchild" H 4800 2550 60  0001 C CNN "Manufacturer"
+F 7 "LM7805ACT" H 4800 2550 60  0001 C CNN "Manufacturer Part No"
+F 8 "RS" H 4800 2550 60  0001 C CNN "Supplier 1"
+F 9 "806-2839" H 4800 2550 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 4800 2550 60  0001 C CNN "Supplier 2"
+F 11 "~" H 4800 2550 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.327" H 4800 2550 60  0001 C CNN "Cost"
 	1    4800 2550
 	1    0    0    -1  
 $EndComp
@@ -798,6 +824,15 @@ F 0 "U2" H 2950 4700 39  0000 C CNN
 F 1 "TCXO_SMD_4P" H 2950 4900 39  0000 C CNN
 F 2 "gridMeter:FOX924" H 2950 4700 39  0001 C CNN
 F 3 "" H 2950 4700 39  0000 C CNN
+F 4 "12MHz TCO SMD" H 2950 4700 60  0001 C CNN "Description"
+F 5 "~" H 2950 4700 60  0001 C CNN "Notes"
+F 6 "Fox" H 2950 4700 60  0001 C CNN "Manufacturer"
+F 7 "FOX924B-16.000" H 2950 4700 60  0001 C CNN "Manufacturer Part No"
+F 8 "Aliexpress" H 2950 4700 60  0001 C CNN "Supplier 1"
+F 9 "http://www.aliexpress.com/item/Hot-selling-original-15PCS-FOX924B-16-000-Oscillator-TCXO-16MHz-1-5ppm-2-5ppm-Stability/32668179196.html" H 2950 4700 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 2950 4700 60  0001 C CNN "Supplier 2"
+F 11 "~" H 2950 4700 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.60" H 2950 4700 60  0001 C CNN "Cost"
 	1    2950 4700
 	1    0    0    -1  
 $EndComp
@@ -835,11 +870,100 @@ P 1900 2300
 F 0 "CON1" H 1900 2550 60  0000 C CNN
 F 1 "AC POWER" H 1900 2100 60  0000 C CNN
 F 2 "REInnovationFootprint:DC_Power_2_1" H 1900 2300 60  0001 C CNN
-F 3 "" H 1900 2300 60  0000 C CNN
+F 3 "http://www.rapidonline.com/pdf/20-0970.pdf" H 1900 2300 60  0000 C CNN
+F 4 "2.1mm Barrell Jack" H 1900 2300 60  0001 C CNN "Description"
+F 5 "~" H 1900 2300 60  0001 C CNN "Notes"
+F 6 "TruConnect" H 1900 2300 60  0001 C CNN "Manufacturer"
+F 7 "~" H 1900 2300 60  0001 C CNN "Manufacturer Part No"
+F 8 "Rapid" H 1900 2300 60  0001 C CNN "Supplier 1"
+F 9 "20-0970" H 1900 2300 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 1900 2300 60  0001 C CNN "Supplier 2"
+F 11 "~" H 1900 2300 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.19" H 1900 2300 60  0001 C CNN "Cost"
 	1    1900 2300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	2200 2300 2300 2300
 Connection ~ 2300 2400
+$Comp
+L MCP1700 U1
+U 1 1 575B0340
+P 1900 4650
+F 0 "U1" H 2050 4454 60  0000 C CNN
+F 1 "MCP170-3_3V" H 1900 4850 60  0000 C CNN
+F 2 "matts_components:TO92-MCP1700" H 1900 4650 60  0001 C CNN
+F 3 "http://docs-europe.electrocomponents.com/webdocs/137e/0900766b8137eacf.pdf" H 1900 4650 60  0001 C CNN
+F 4 "LDO 3.3V 100mA" H 1900 4650 60  0001 C CNN "Description"
+F 5 "~" H 1900 4650 60  0001 C CNN "Notes"
+F 6 "Microchip" H 1900 4650 60  0001 C CNN "Manufacturer"
+F 7 "MCP1700-3302E/TO" H 1900 4650 60  0001 C CNN "Manufacturer Part No"
+F 8 "RS" H 1900 4650 60  0001 C CNN "Supplier 1"
+F 9 "403-888" H 1900 4650 60  0001 C CNN "Supplier 1 Part No"
+F 10 "~" H 1900 4650 60  0001 C CNN "Supplier 2"
+F 11 "~" H 1900 4650 60  0001 C CNN "Supplier 2 Part No"
+F 12 "0.253" H 1900 4650 60  0001 C CNN "Cost"
+	1    1900 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P6
+U 1 1 575B18DD
+P 10350 1100
+F 0 "P6" H 10350 1200 50  0000 C CNN
+F 1 "LOGO1" V 10450 1100 50  0000 C CNN
+F 2 "CuriousElectric2:CuriousElectric_flat_12mm" H 10350 1100 50  0001 C CNN
+F 3 "" H 10350 1100 50  0000 C CNN
+	1    10350 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P7
+U 1 1 575B1994
+P 10350 1450
+F 0 "P7" H 10350 1550 50  0000 C CNN
+F 1 "Enclosure" V 10450 1450 50  0000 C CNN
+F 2 "" H 10350 1450 50  0001 C CNN
+F 3 "" H 10350 1450 50  0000 C CNN
+	1    10350 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P1
+U 1 1 575B1A13
+P 9850 2700
+F 0 "P1" H 9850 2800 50  0000 C CNN
+F 1 "STEPPER" V 9950 2700 50  0000 C CNN
+F 2 "" H 9850 2700 50  0001 C CNN
+F 3 "" H 9850 2700 50  0000 C CNN
+	1    9850 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P8
+U 1 1 575B1AE5
+P 10800 1100
+F 0 "P8" H 10800 1200 50  0000 C CNN
+F 1 "LOGO2" V 10900 1100 50  0000 C CNN
+F 2 "CuriousElectric2:CuriousElectric_globe_10mm" H 10800 1100 50  0001 C CNN
+F 3 "" H 10800 1100 50  0000 C CNN
+	1    10800 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P5
+U 1 1 575B1B74
+P 9900 1100
+F 0 "P5" H 9900 1200 50  0000 C CNN
+F 1 "PCB" V 10000 1100 50  0000 C CNN
+F 2 "" H 9900 1100 50  0001 C CNN
+F 3 "" H 9900 1100 50  0000 C CNN
+	1    9900 1100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9700 1100
+NoConn ~ 10150 1100
+NoConn ~ 10150 1450
+NoConn ~ 10600 1100
+NoConn ~ 9650 2700
 $EndSCHEMATC
