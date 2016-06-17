@@ -1,0 +1,21 @@
+Reference, Quantity, Value, Footprint, Datasheet, Manufacturer, Manufacturer Part No, Supplier 1, Supplier 1 Part No, Cost, Description
+C1 C4 C5 ,3,100n,Capacitors_ThroughHole:C_Rect_L7_W2.5_P5,
+C2 C3 ,2,220u,Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5,
+CON1 ,1,AC POWER,REInnovationFootprint:DC_Power_2_1,http://www.rapidonline.com/pdf/20-0970.pdf,TruConnect,,Rapid,20-0970,0.19,2.1mm Barrell Jack
+D1 D2 D3 D4 D5 D6 ,6,1N400x,Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10,
+IC1 ,1, ATTINY84A-PU,Housings_DIP:DIP-14_W7.62mm,http://docs-europe.electrocomponents.com/webdocs/0fa2/0900766b80fa26b4.pdf,Atmel, ATTINY84A-PU,RS,738-0684,1.05,
+P1 ,1,STEPPER,,
+P2 ,1,AC POWER,REInnovationFootprint:TH_CONN_2W,
+P3 ,1,MOTOR,gridMeter:XHP-5,
+P4 ,1,ISP,Pin_Headers:Pin_Header_Straight_2x03,
+P5 ,1,PCB,,
+P6 ,1,LOGO1,CuriousElectric2:CuriousElectric_flat_12mm,
+P7 ,1,Enclosure,,
+P8 ,1,LOGO2,CuriousElectric2:CuriousElectric_globe_10mm,
+R2 ,1,330R,Resistors_ThroughHole:Resistor_Horizontal_RM10mm,
+R1 R3 R4 ,3,10K,Resistors_ThroughHole:Resistor_Horizontal_RM10mm,
+U1 ,1,MCP170-3_3V,matts_components:TO92-MCP1700,http://docs-europe.electrocomponents.com/webdocs/137e/0900766b8137eacf.pdf,Microchip,MCP1700-3302E/TO,RS,403-888,0.253,LDO 3.3V 100mA
+U2 ,1,TCXO_SMD_4P,gridMeter:FOX924,,Fox,FOX924B-16.000,Aliexpress,http://www.aliexpress.com/item/Hot-selling-original-15PCS-FOX924B-16-000-Oscillator-TCXO-16MHz-1-5ppm-2-5ppm-Stability/32668179196.html,0.60,12MHz TCO SMD
+U3 ,1,TCRT5000,gridMeter:TCRT5000,,,TCRT5000L,Aliexpress,http://www.aliexpress.com/item/Free-Shipping-100-pcs-TCRT5000L-TCRT5000-Reflective-Infrared-Optical-Sensor-Photoelectric-Switches/1933011720.html,0.15,Opto-reflective IR sensor
+U4 ,1,7805,TO_SOT_Packages_THT:TO-220_Neutral123_Horizontal,http://docs-europe.electrocomponents.com/webdocs/12cf/0900766b812cfcbe.pdf,Fairchild,LM7805ACT,RS,806-2839,0.327,1A 5V regulator.
+U5 ,1,ULN2003,Housings_DIP:DIP-16_W7.62mm_LongPads,http://docs-europe.electrocomponents.com/webdocs/1294/0900766b81294fa6.pdf,Toshiba,ULN2003APG,RS,796-5320,0.151,Darlington transistor array

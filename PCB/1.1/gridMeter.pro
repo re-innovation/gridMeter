@@ -1,4 +1,4 @@
-update=10/06/2016 19:08:30
+update=17/06/2016 14:51:27
 version=1
 last_client=kicad
 [pcbnew]
@@ -69,5 +69,4 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=gridMeter
-LibName32=D:/Google Drive/KiCAD/KiCad My Libraries/matts_components
+LibName31=D:/Google Drive/KiCAD/KiCad My Libraries/matts_components

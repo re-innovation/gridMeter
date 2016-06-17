@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>D:/Google Drive/Work - Kits/PRODUCTS/Prototype/Mains Freq Meter/gridMeter/PCB/1.1/gridMeter.sch</source>
+    <date>17/06/2016 14:47:47</date>
+    <tool>Eeschema 4.0.2-stable</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Grid Meter</title>
+        <company>The Curious Electric Company (Re-Innovation Ltd)</company>
+        <rev>1.2</rev>
+        <date>2016-06-10</date>
+        <source>gridMeter.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="IC1">
+      <value> ATTINY84A-PU</value>
+      <footprint>Housings_DIP:DIP-14_W7.62mm</footprint>
+      <datasheet>http://docs-europe.electrocomponents.com/webdocs/0fa2/0900766b80fa26b4.pdf</datasheet>
+      <fields>
+        <field name="Manufacturer">Atmel</field>
+        <field name="Manufacturer Part No"> ATTINY84A-PU</field>
+        <field name="Supplier 1">RS</field>
+        <field name="Supplier 1 Part No">738-0684</field>
+        <field name="Cost">1.05</field>
+      </fields>
+      <libsource lib="gridMeter" part="ATTINY84A-SS"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5644A04C</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5644A0D2</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5644A0E3</tstamp>
+    </comp>
+    <comp ref="P4">
+      <value>ISP</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_2x03</footprint>
+      <libsource lib="gridMeter" part="CONN_3X2"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5644A6CA</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>10K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5715CAB7</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>Capacitors_ThroughHole:C_Rect_L7_W2.5_P5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5715CDCA</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>10K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5715D09C</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>220u</value>
+      <footprint>Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5715D5E8</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>220u</value>
+      <footprint>Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5715D7AE</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>100n</value>
+      <footprint>Capacitors_ThroughHole:C_Rect_L7_W2.5_P5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57160D39</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>ULN2003</value>
+      <footprint>Housings_DIP:DIP-16_W7.62mm_LongPads</footprint>
+      <datasheet>http://docs-europe.electrocomponents.com/webdocs/1294/0900766b81294fa6.pdf</datasheet>
+      <fields>
+        <field name="Description">Darlington transistor array</field>
+        <field name="Manufacturer">Toshiba</field>
+        <field name="Manufacturer Part No">ULN2003APG</field>
+        <field name="Supplier 1">RS</field>
+        <field name="Supplier 1 Part No">796-5320</field>
+        <field name="Cost">0.151</field>
+      </fields>
+      <libsource lib="gridMeter" part="ULN2003"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57283D96</tstamp>
+    </comp>
+    <comp ref="P3">
+      <value>MOTOR</value>
+      <footprint>gridMeter:XHP-5</footprint>
+      <libsource lib="gridMeter" part="CONN_5"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>572855AC</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>330R</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57287E74</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>10K</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM10mm</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57288B30</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100n</value>
+      <footprint>Capacitors_ThroughHole:C_Rect_L7_W2.5_P5</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>572844CE</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57399C4C</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57399EE1</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5739A385</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>1N400x</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10</footprint>
+      <libsource lib="gridMeter" part="DIODE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5739A3EE</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>TCRT5000</value>
+      <footprint>gridMeter:TCRT5000</footprint>
+      <fields>
+        <field name="Description">Opto-reflective IR sensor</field>
+        <field name="Manufacturer Part No">TCRT5000L</field>
+        <field name="Supplier 1">Aliexpress</field>
+        <field name="Supplier 1 Part No">http://www.aliexpress.com/item/Free-Shipping-100-pcs-TCRT5000L-TCRT5000-Reflective-Infrared-Optical-Sensor-Photoelectric-Switches/1933011720.html</field>
+        <field name="Cost">0.15</field>
+      </fields>
+      <libsource lib="gridMeter" part="TCRT5000"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>573AB351</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>7805</value>
+      <footprint>TO_SOT_Packages_THT:TO-220_Neutral123_Horizontal</footprint>
+      <datasheet>http://docs-europe.electrocomponents.com/webdocs/12cf/0900766b812cfcbe.pdf</datasheet>
+      <fields>
+        <field name="Description">1A 5V regulator.</field>
+        <field name="Manufacturer">Fairchild</field>
+        <field name="Manufacturer Part No">LM7805ACT</field>
+        <field name="Supplier 1">RS</field>
+        <field name="Supplier 1 Part No">806-2839</field>
+        <field name="Cost">0.327</field>
+      </fields>
+      <libsource lib="gridMeter" part="3PIN-REG-IN-GND-OUT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>573ADA9F</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>TCXO_SMD_4P</value>
+      <footprint>gridMeter:FOX924</footprint>
+      <fields>
+        <field name="Description">12MHz TCO SMD</field>
+        <field name="Manufacturer">Fox</field>
+        <field name="Manufacturer Part No">FOX924B-16.000</field>
+        <field name="Supplier 1">Aliexpress</field>
+        <field name="Supplier 1 Part No">http://www.aliexpress.com/item/Hot-selling-original-15PCS-FOX924B-16-000-Oscillator-TCXO-16MHz-1-5ppm-2-5ppm-Stability/32668179196.html</field>
+        <field name="Cost">0.60</field>
+      </fields>
+      <libsource lib="gridMeter" part="TCXO_SMD_4P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>573D56BF</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>AC POWER</value>
+      <footprint>REInnovationFootprint:TH_CONN_2W</footprint>
+      <libsource lib="gridMeter" part="CONN_2"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>573EA88B</tstamp>
+    </comp>
+    <comp ref="CON1">
+      <value>AC POWER</value>
+      <footprint>REInnovationFootprint:DC_Power_2_1</footprint>
+      <datasheet>http://www.rapidonline.com/pdf/20-0970.pdf</datasheet>
+      <fields>
+        <field name="Description">2.1mm Barrell Jack</field>
+        <field name="Manufacturer">TruConnect</field>
+        <field name="Supplier 1">Rapid</field>
+        <field name="Supplier 1 Part No">20-0970</field>
+        <field name="Cost">0.19</field>
+      </fields>
+      <libsource lib="conn" part="BARREL_JACK"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>573ECDED</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>MCP170-3_3V</value>
+      <footprint>matts_components:TO92-MCP1700</footprint>
+      <datasheet>http://docs-europe.electrocomponents.com/webdocs/137e/0900766b8137eacf.pdf</datasheet>
+      <fields>
+        <field name="Description">LDO 3.3V 100mA</field>
+        <field name="Manufacturer">Microchip</field>
+        <field name="Manufacturer Part No">MCP1700-3302E/TO</field>
+        <field name="Supplier 1">RS</field>
+        <field name="Supplier 1 Part No">403-888</field>
+        <field name="Cost">0.253</field>
+      </fields>
+      <libsource lib="matts_components" part="MCP1700"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B0340</tstamp>
+    </comp>
+    <comp ref="P6">
+      <value>LOGO1</value>
+      <footprint>CuriousElectric2:CuriousElectric_flat_12mm</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B18DD</tstamp>
+    </comp>
+    <comp ref="P7">
+      <value>Enclosure</value>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B1994</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>STEPPER</value>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B1A13</tstamp>
+    </comp>
+    <comp ref="P8">
+      <value>LOGO2</value>
+      <footprint>CuriousElectric2:CuriousElectric_globe_10mm</footprint>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B1AE5</tstamp>
+    </comp>
+    <comp ref="P5">
+      <value>PCB</value>
+      <libsource lib="conn" part="CONN_01X01"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>575B1B74</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="gridMeter" part="3PIN-REG-IN-GND-OUT">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">3PIN-REG-IN-GND-OUT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VI" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="ATTINY24A-SS">
+      <aliases>
+        <alias>ATTINY44A-SS</alias>
+        <alias>ATTINY84A-SS</alias>
+      </aliases>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">ATTINY24A-SS</field>
+        <field name="Footprint">SO14</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="power_in"/>
+        <pin num="2" name="(PCINT8/CLKI/XTAL1)PB0" type="BiDi"/>
+        <pin num="3" name="(PCINT9/XTAL2)PB1" type="BiDi"/>
+        <pin num="4" name="(PCINT11/dW/~RESET~)PB3" type="BiDi"/>
+        <pin num="5" name="(PCINT10/CKOUT/OC0A/INT0)PB2" type="BiDi"/>
+        <pin num="6" name="(PCINT7/ICP/OC0B/ADC7)PA7" type="BiDi"/>
+        <pin num="7" name="(PCINT6/SDA/DI/MOSI/OC1A/ADC6)PA6" type="BiDi"/>
+        <pin num="8" name="(PCINT5/DO/MISO/OC1B/ADC5)PA5" type="BiDi"/>
+        <pin num="9" name="(PCINT4/USCK/SCL/T1/ADC4)PA4" type="BiDi"/>
+        <pin num="10" name="(PCINT3/T0/ADC3)PA3" type="BiDi"/>
+        <pin num="11" name="(PCINT2/AIN1/ADC2)PA2" type="BiDi"/>
+        <pin num="12" name="(PCINT1/AIN0/ADC1)PA1" type="BiDi"/>
+        <pin num="13" name="(PCINT0/AREF/ADC0)PA0" type="BiDi"/>
+        <pin num="14" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="BARREL_JACK">
+      <description>DC Barrel Jack</description>
+      <fields>
+        <field name="Reference">CON</field>
+        <field name="Value">BARREL_JACK</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X01">
+      <description>Connector 01x01</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X01</fp>
+        <fp>Pin_Header_Angled_1X01</fp>
+        <fp>Socket_Strip_Straight_1X01</fp>
+        <fp>Socket_Strip_Angled_1X01</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="CONN_2">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="PM" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="CONN_3X2">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_3X2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="CONN_5">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+        <pin num="4" name="~" type="passive"/>
+        <pin num="5" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="DIODE">
+      <footprints>
+        <fp>D?</fp>
+        <fp>S*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">DIODE</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="MC1413">
+      <aliases>
+        <alias>ULN2003</alias>
+        <alias>ULN2003A</alias>
+      </aliases>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MC1413</field>
+      </fields>
+      <pins>
+        <pin num="1" name="I1" type="input"/>
+        <pin num="2" name="I2" type="input"/>
+        <pin num="3" name="I3" type="input"/>
+        <pin num="4" name="I4" type="input"/>
+        <pin num="5" name="I5" type="input"/>
+        <pin num="6" name="I6" type="input"/>
+        <pin num="7" name="I7" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="COM" type="input"/>
+        <pin num="10" name="O7" type="openCol"/>
+        <pin num="11" name="O6" type="openCol"/>
+        <pin num="12" name="O5" type="openCol"/>
+        <pin num="13" name="O4" type="openCol"/>
+        <pin num="14" name="O3" type="openCol"/>
+        <pin num="15" name="O2" type="openCol"/>
+        <pin num="16" name="O1" type="openCol"/>
+      </pins>
+    </libpart>
+    <libpart lib="matts_components" part="MCP1700">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP1700</field>
+      </fields>
+      <pins>
+        <pin num="GND" name="GND" type="input"/>
+        <pin num="VI" name="VI" type="input"/>
+        <pin num="VO" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="TCRT5000">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TCRT5000</field>
+      </fields>
+      <pins>
+        <pin num="1" name="C" type="input"/>
+        <pin num="2" name="E" type="input"/>
+        <pin num="3" name="K" type="input"/>
+        <pin num="4" name="A" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="gridMeter" part="TCXO_SMD_4P">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TCXO_SMD_4P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vcon" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="OUT" type="output"/>
+        <pin num="4" name="Vcc" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="device">
+      <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>C:\Program Files\KiCad\share\kicad\library\conn.lib</uri>
+    </library>
+    <library logical="gridMeter">
+      <uri>D:\Google Drive\Work - Kits\PRODUCTS\Prototype\Mains Freq Meter\gridMeter\PCB\1.1\gridMeter.lib</uri>
+    </library>
+    <library logical="matts_components">
+      <uri>D:\Google Drive\KiCAD\KiCad My Libraries\matts_components.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(U5-Pad5)">
+      <node ref="U5" pin="5"/>
+    </net>
+    <net code="2" name="Net-(R2-Pad2)">
+      <node ref="R2" pin="2"/>
+      <node ref="U3" pin="4"/>
+    </net>
+    <net code="3" name="/MOTOR_HOME_OUT">
+      <node ref="IC1" pin="3"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="4" name="/MOTOR_HOME_SENSE">
+      <node ref="U3" pin="1"/>
+      <node ref="IC1" pin="13"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="5" name="Net-(U5-Pad7)">
+      <node ref="U5" pin="7"/>
+    </net>
+    <net code="6" name="Net-(U5-Pad6)">
+      <node ref="U5" pin="6"/>
+    </net>
+    <net code="7" name="Net-(U5-Pad10)">
+      <node ref="U5" pin="10"/>
+    </net>
+    <net code="8" name="Net-(U5-Pad11)">
+      <node ref="U5" pin="11"/>
+    </net>
+    <net code="9" name="Net-(U5-Pad12)">
+      <node ref="U5" pin="12"/>
+    </net>
+    <net code="10" name="VCC">
+      <node ref="C4" pin="1"/>
+      <node ref="P4" pin="2"/>
+      <node ref="C3" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="U1" pin="VI"/>
+      <node ref="U4" pin="3"/>
+      <node ref="R4" pin="2"/>
+      <node ref="D5" pin="2"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="U5" pin="9"/>
+      <node ref="P3" pin="5"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="11" name="GND">
+      <node ref="P4" pin="6"/>
+      <node ref="U3" pin="3"/>
+      <node ref="U3" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="IC1" pin="14"/>
+      <node ref="D6" pin="1"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="U5" pin="8"/>
+      <node ref="U2" pin="2"/>
+      <node ref="U4" pin="2"/>
+      <node ref="D2" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="U1" pin="GND"/>
+    </net>
+    <net code="12" name="/IN3">
+      <node ref="U5" pin="3"/>
+      <node ref="IC1" pin="5"/>
+    </net>
+    <net code="13" name="/IN4">
+      <node ref="U5" pin="4"/>
+      <node ref="IC1" pin="6"/>
+    </net>
+    <net code="14" name="/IN2">
+      <node ref="U5" pin="2"/>
+      <node ref="IC1" pin="11"/>
+    </net>
+    <net code="15" name="/IN1">
+      <node ref="U5" pin="1"/>
+      <node ref="IC1" pin="12"/>
+    </net>
+    <net code="16" name="Net-(P3-Pad1)">
+      <node ref="P3" pin="1"/>
+      <node ref="U5" pin="16"/>
+    </net>
+    <net code="17" name="Net-(P3-Pad2)">
+      <node ref="U5" pin="15"/>
+      <node ref="P3" pin="2"/>
+    </net>
+    <net code="18" name="Net-(P3-Pad3)">
+      <node ref="U5" pin="14"/>
+      <node ref="P3" pin="3"/>
+    </net>
+    <net code="19" name="Net-(P3-Pad4)">
+      <node ref="U5" pin="13"/>
+      <node ref="P3" pin="4"/>
+    </net>
+    <net code="20" name="Net-(U2-Pad1)">
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="21" name="Net-(P7-Pad1)">
+      <node ref="P7" pin="1"/>
+    </net>
+    <net code="22" name="Net-(P1-Pad1)">
+      <node ref="P1" pin="1"/>
+    </net>
+    <net code="23" name="Net-(P8-Pad1)">
+      <node ref="P8" pin="1"/>
+    </net>
+    <net code="24" name="Net-(P6-Pad1)">
+      <node ref="P6" pin="1"/>
+    </net>
+    <net code="25" name="Net-(P5-Pad1)">
+      <node ref="P5" pin="1"/>
+    </net>
+    <net code="26" name="Net-(CON1-Pad2)">
+      <node ref="D4" pin="1"/>
+      <node ref="CON1" pin="3"/>
+      <node ref="CON1" pin="2"/>
+      <node ref="P2" pin="1"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="27" name="Net-(C1-Pad1)">
+      <node ref="U1" pin="VO"/>
+      <node ref="U2" pin="4"/>
+      <node ref="C1" pin="1"/>
+    </net>
+    <net code="28" name="/TCXO">
+      <node ref="IC1" pin="2"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="29" name="/RST">
+      <node ref="P4" pin="5"/>
+      <node ref="R4" pin="1"/>
+      <node ref="IC1" pin="4"/>
+    </net>
+    <net code="30" name="/MOSI">
+      <node ref="IC1" pin="7"/>
+      <node ref="P4" pin="4"/>
+    </net>
+    <net code="31" name="/SCK">
+      <node ref="IC1" pin="9"/>
+      <node ref="P4" pin="3"/>
+    </net>
+    <net code="32" name="/MISO">
+      <node ref="P4" pin="1"/>
+      <node ref="IC1" pin="8"/>
+    </net>
+    <net code="33" name="/DMAINSF">
+      <node ref="IC1" pin="10"/>
+      <node ref="R3" pin="1"/>
+      <node ref="D6" pin="2"/>
+      <node ref="D5" pin="1"/>
+    </net>
+    <net code="34" name="/MAINSF">
+      <node ref="D3" pin="1"/>
+      <node ref="D1" pin="2"/>
+      <node ref="P2" pin="2"/>
+      <node ref="CON1" pin="1"/>
+      <node ref="R3" pin="2"/>
+    </net>
+    <net code="35" name="Net-(C2-Pad1)">
+      <node ref="U4" pin="1"/>
+      <node ref="D4" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="D3" pin="2"/>
+    </net>
+  </nets>
+</export>
