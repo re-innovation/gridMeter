@@ -6,7 +6,7 @@
 
 #define STEP_DELAY (60L * 1000L * 1000L / STEPS_PER_REV / SPEED_IN_RPM)
 
-Stepper::Stepper(int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4)
+Stepper::Stepper(int motor_pin_1, int motor_pin_3, int motor_pin_2, int motor_pin_4)
 {
   this->step_number = 0;    // which step the motor is on
   this->direction = 0;      // motor direction
@@ -60,7 +60,7 @@ void Stepper::step(int steps_to_move)
     
     // decrement the steps left:
     steps_left--;
-    stepMotor(this->step_number % 4);
+    stepMotor(this->step_number % STEP_LIMIT);
     if (steps_left) { _delay_us(STEP_DELAY); }
 
   }
@@ -69,28 +69,53 @@ void Stepper::step(int steps_to_move)
 /*
  * Moves the motor forward or backwards.
  */
+
 void Stepper::stepMotor(int thisStep)
 {
   switch (thisStep) {
-    case 0:  // 1010
+    case 0:
       digitalWrite(motor_pin_1, HIGH);
+      digitalWrite(motor_pin_2, LOW);
+      digitalWrite(motor_pin_3, LOW);
+      digitalWrite(motor_pin_4, LOW);
+    break;
+    case 1:
+      digitalWrite(motor_pin_1, HIGH);
+      digitalWrite(motor_pin_2, HIGH);
+      digitalWrite(motor_pin_3, LOW);
+      digitalWrite(motor_pin_4, LOW);
+    break;
+    case 2:
+      digitalWrite(motor_pin_1, LOW);
+      digitalWrite(motor_pin_2, HIGH);
+      digitalWrite(motor_pin_3, LOW);
+      digitalWrite(motor_pin_4, LOW);
+    break;
+    case 3:
+      digitalWrite(motor_pin_1, LOW);
+      digitalWrite(motor_pin_2, HIGH);
+      digitalWrite(motor_pin_3, HIGH);
+      digitalWrite(motor_pin_4, LOW);
+    break;
+    case 4:
+      digitalWrite(motor_pin_1, LOW);
       digitalWrite(motor_pin_2, LOW);
       digitalWrite(motor_pin_3, HIGH);
       digitalWrite(motor_pin_4, LOW);
     break;
-    case 1:  // 0110
+    case 5:
       digitalWrite(motor_pin_1, LOW);
-      digitalWrite(motor_pin_2, HIGH);
+      digitalWrite(motor_pin_2, LOW);
       digitalWrite(motor_pin_3, HIGH);
-      digitalWrite(motor_pin_4, LOW);
+      digitalWrite(motor_pin_4, HIGH);
     break;
-    case 2:  //0101
+    case 6:
       digitalWrite(motor_pin_1, LOW);
-      digitalWrite(motor_pin_2, HIGH);
+      digitalWrite(motor_pin_2, LOW);
       digitalWrite(motor_pin_3, LOW);
       digitalWrite(motor_pin_4, HIGH);
     break;
-    case 3:  //1001
+    case 7:
       digitalWrite(motor_pin_1, HIGH);
       digitalWrite(motor_pin_2, LOW);
       digitalWrite(motor_pin_3, LOW);

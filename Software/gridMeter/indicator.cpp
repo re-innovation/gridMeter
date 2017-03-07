@@ -15,10 +15,14 @@
  * Defines and Typedefs
  */
 
-#define MOTOR_PIN_1 (7) // Arduino digital pin 7 = physical pin 6, PA7)
+#define MOTOR_PIN_1 (1) // Arduino digital pin 1 = physical pin 12, PA1)
 #define MOTOR_PIN_2 (2) // Arduino digital pin 2 = physical pin 11, PA2)
 #define MOTOR_PIN_3 (8) // Arduino digital pin 8 = physical pin 5, PB2)
-#define MOTOR_PIN_4 (5) // Arduino digital pin 5 = physical pin 5, PA5)
+#define MOTOR_PIN_4 (7) // Arduino digital pin 7 = physical pin 6, PA7)
+
+#define HOME_OUT_PIN (9)  // Arduino digital pin 9 = physical pin 3, PB1)
+#define HOME_IN_PIN (0)  // Arduino digital pin 0 = physical pin 3, PA0)
+
 
 /*
  * Module scope objects and variables
@@ -42,33 +46,8 @@ static uint8_t s_pinStates[4] = {LOW, LOW, LOW, LOW};
  * Public Functions
  */
 
-static void save_pin_states()
-{
-	//s_pinStates[0] = bitRead(PORTA, 7) ? HIGH : LOW;
-	//s_pinStates[1] = bitRead(PORTA, 2) ? HIGH : LOW;
-	//s_pinStates[2] = bitRead(PORTB, 2) ? HIGH : LOW;
-	//s_pinStates[3] = bitRead(PORTA, 5) ? HIGH : LOW;
-}
-
-static void restore_pin_states()
-{
-	//digitalWrite(MOTOR_PIN_1, s_pinStates[0]);
-	//digitalWrite(MOTOR_PIN_2, s_pinStates[1]);
-	//digitalWrite(MOTOR_PIN_3, s_pinStates[2]);
-	//digitalWrite(MOTOR_PIN_4, s_pinStates[3]);
-}
-
-static void motor_off()
-{
-	//digitalWrite(MOTOR_PIN_1, LOW);
-	//digitalWrite(MOTOR_PIN_2, LOW);
-	//digitalWrite(MOTOR_PIN_3, LOW);
-	//digitalWrite(MOTOR_PIN_4, LOW);
-}
-
 static void move_one_step_towards_target()
 {
-	restore_pin_states();
 	if (s_target_position > s_current_position)
 	{
 		s_stepper.step(1);
@@ -79,8 +58,6 @@ static void move_one_step_towards_target()
 		s_stepper.step(-1);
 		s_current_position--;	
 	}
-	save_pin_states();
-	motor_off();
 }
 
 static bool move_is_required()
@@ -119,9 +96,52 @@ int indicator_moveto_freq(uint16_t freq, uint16_t timer)
 	
 	if(s_target_position != s_current_position)
 	{
+		// Make speed of movement is relative to distance to travel
+		// More distance -> more speed
+		// This means that time-to-move should be equal for all distance
+		// this looks best as it avoids the needle quickly jumping between positions
 		s_us_per_step = 1000000UL / abs(s_target_position - s_current_position);
 		s_last_step_time = timer;
 	}
 	
 	return s_us_per_step;
+}
+
+void indicator_moveto_freq_blocking(uint16_t freq)
+{
+	freq = constrain(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT);
+	s_target_position = map(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT, STEPS_AT_MIN_FREQ_LIMIT, STEPS_AT_MAX_FREQ_LIMIT);
+	
+	while(s_target_position != s_current_position)
+	{
+		move_one_step_towards_target();
+		_delay_ms(3);
+	}
+}
+
+void indicator_home()
+{
+
+	pinMode(HOME_OUT_PIN, OUTPUT);
+	digitalWrite(HOME_OUT_PIN, HIGH);
+
+	// Delay allows for response time of phototransistor
+	// Otherwise the correct start state isn't found
+	_delay_ms(10);
+
+	// Get the initial state of phototransistor
+	// Then move motor (forwards or backwards, depending)
+	// until the state changes
+
+	int start_state = digitalRead(HOME_IN_PIN);
+	while (digitalRead(HOME_IN_PIN) == start_state)
+	{
+		s_stepper.step(start_state ? -1 : 1);
+		_delay_ms(4);
+	}
+
+	digitalWrite(HOME_OUT_PIN, LOW);
+	pinMode(HOME_OUT_PIN, INPUT);
+
+	s_current_position = 0;
 }

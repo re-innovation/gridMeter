@@ -1,13 +1,13 @@
 #ifndef Stepper_h
 #define Stepper_h
 
-#define STEPS_PER_REV 2048UL
+#define STEP_LIMIT 8
+#define STEPS_PER_REV 4096UL
 
 class Stepper {
   public:
     // constructors:
-    Stepper(int motor_pin_1, int motor_pin_2,
-                                 int motor_pin_3, int motor_pin_4);
+    Stepper(int motor_pin_1, int motor_pin_3, int motor_pin_2, int motor_pin_4);
 
     // mover method:
     void step(int number_of_steps);
