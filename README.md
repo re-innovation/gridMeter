@@ -7,8 +7,8 @@ A National Grid frequency monitor for visualising power flows on the national gr
 
 
 # Collaborators
-James Fowkes - Software and PCB design v1
-Matt Little - PCB design v2 and Hardware
+* James Fowkes - Software and PCB design v1
+* Matt Little - PCB design v2 and Hardware
 
 
 # PCB
