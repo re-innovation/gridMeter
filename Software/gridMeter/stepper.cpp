@@ -3,7 +3,7 @@
  *
  * Provides low level stepper functionality.
  * Basic functionality copied from standard stepper 
- * library to save program space and avoid need for seperate library.
+ * library to save program space and allow enable/disable
  *
  */
 
@@ -72,6 +72,27 @@ void Stepper::step(int steps_to_move)
     stepMotor(this->step_number % STEP_LIMIT);
     if (steps_left) { _delay_us(STEP_DELAY); }
 
+  }
+}
+
+void Stepper::enable()
+{
+  if (!this->enabled)
+  {
+    this->enabled = true;
+    stepMotor(this->step_number % STEP_LIMIT);
+  }
+}
+
+void Stepper::disable()
+{
+  if (this->enabled)
+  {
+    this->enabled = false;
+    digitalWrite(motor_pin_1, LOW);
+    digitalWrite(motor_pin_2, LOW);
+    digitalWrite(motor_pin_3, LOW);
+    digitalWrite(motor_pin_4, LOW);
   }
 }
 

@@ -41,8 +41,10 @@ static Stepper s_stepper(MOTOR_PIN_1, MOTOR_PIN_3, MOTOR_PIN_2, MOTOR_PIN_4);
 
 static const float STEPS_PER_DEGREE = (float)STEPS_PER_REV / 360.0;
 
+// Set the movement range and deadzone here
 static const int16_t STEPS_AT_MIN_FREQ_LIMIT = (int16_t)(-45.0 * STEPS_PER_DEGREE);
 static const int16_t STEPS_AT_MAX_FREQ_LIMIT = (int16_t)(45.0 * STEPS_PER_DEGREE);
+static const int16_t MOVEMENT_DEADZONE = (int16_t)(1.0 * STEPS_PER_DEGREE);
 
 static int16_t s_current_position = 0;
 static int16_t s_target_position = 0;
@@ -91,10 +93,18 @@ void indicator_setup()
 
 void indicator_tick(uint16_t timer)
 {
-	if(move_is_required() && step_time_elapsed(timer))
+	if(move_is_required())
 	{
-		move_one_step_towards_target();
-		s_last_step_time = timer;
+		s_stepper.enable();
+		if (step_time_elapsed(timer))
+		{
+			move_one_step_towards_target();
+			s_last_step_time = timer;
+		}
+	}
+	else
+	{
+		s_stepper.disable();
 	}
 }
 
@@ -105,11 +115,13 @@ int indicator_moveto_freq(uint16_t freq, uint16_t timer)
 	// Ensure the needle does not move beyond limits by constraining the input
 	freq = constrain(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT);
 	
-	// Convert the input frequency to need position
-	s_target_position = map(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT, STEPS_AT_MIN_FREQ_LIMIT, STEPS_AT_MAX_FREQ_LIMIT);
+	// Convert the input frequency to new position
+	int16_t new_target = map(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT, STEPS_AT_MIN_FREQ_LIMIT, STEPS_AT_MAX_FREQ_LIMIT);
 	
-	if(s_target_position != s_current_position)
+	// Only move if the new target is outside the deadzone
+	if(abs(new_target - s_current_position) >= MOVEMENT_DEADZONE)
 	{
+		s_target_position = new_target;
 		// Make speed of movement is relative to distance to travel
 		// More distance -> more speed
 		// This means that time-to-move should be equal for all distance
