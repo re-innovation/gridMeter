@@ -1,3 +1,12 @@
+/*
+ * stepper.cpp
+ *
+ * Provides low level stepper functionality.
+ * Basic functionality copied from standard stepper 
+ * library to save program space and avoid need for seperate library.
+ *
+ */
+
 #include <Arduino.h>
 
 #include "stepper.h"
@@ -67,7 +76,7 @@ void Stepper::step(int steps_to_move)
 }
 
 /*
- * Moves the motor forward or backwards.
+ * Moves the motor forward or backwards (quarter stepping)
  */
 
 void Stepper::stepMotor(int thisStep)

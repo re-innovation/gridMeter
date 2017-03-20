@@ -1,4 +1,13 @@
 /*
+ * indicator.cpp
+ *
+ * Provides indicator functionality for the grid meter.
+ * The current indicator is a BYJ48 geared stepper motor.
+ * Homing is provided by an IR photoreflector.
+ *
+ */
+
+ /*
  * Arduino Includes
  */
 
@@ -89,9 +98,14 @@ void indicator_tick(uint16_t timer)
 	}
 }
 
+/* indicator_moveto_freq
+ * Sets target needle location and movement speed. Does not block. */
 int indicator_moveto_freq(uint16_t freq, uint16_t timer)
 {
+	// Ensure the needle does not move beyond limits by constraining the input
 	freq = constrain(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT);
+	
+	// Convert the input frequency to need position
 	s_target_position = map(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT, STEPS_AT_MIN_FREQ_LIMIT, STEPS_AT_MAX_FREQ_LIMIT);
 	
 	if(s_target_position != s_current_position)
@@ -107,6 +121,8 @@ int indicator_moveto_freq(uint16_t freq, uint16_t timer)
 	return s_us_per_step;
 }
 
+/* indicator_moveto_freq
+ * Sets target needle location and moves until reached. */
 void indicator_moveto_freq_blocking(uint16_t freq)
 {
 	freq = constrain(freq, MIN_FREQ_LIMIT, MAX_FREQ_LIMIT);
@@ -121,7 +137,7 @@ void indicator_moveto_freq_blocking(uint16_t freq)
 
 void indicator_home()
 {
-
+	// Turn on the IR LED in the photoreflector
 	pinMode(HOME_OUT_PIN, OUTPUT);
 	digitalWrite(HOME_OUT_PIN, HIGH);
 
@@ -140,8 +156,10 @@ void indicator_home()
 		_delay_ms(4);
 	}
 
+	// Turn off the IR LED
 	digitalWrite(HOME_OUT_PIN, LOW);
 	pinMode(HOME_OUT_PIN, INPUT);
 
+	// Now homed, so reset the current position
 	s_current_position = 0;
 }

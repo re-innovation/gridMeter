@@ -1,6 +1,7 @@
 #ifndef _INDICATOR_H_
 #define _INDICATOR_H_
 
+// Sets how far the indicator can travel (units of frequency * 1000)
 static const uint16_t MIN_FREQ_LIMIT = 49900;
 static const uint16_t MAX_FREQ_LIMIT = 50100;
 
