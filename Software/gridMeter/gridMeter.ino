@@ -67,7 +67,7 @@ static const uint32_t IDEAL_F_CLK = TMR1_CLK_FREQ; // Frequency of the incoming 
 static const uint32_t IDEAL_F_CLK_COUNTS = IDEAL_SECONDS * IDEAL_F_CLK;  // If mains is exactly 50Hz, should count exactly this many clocks in time period
 
 // Software serial is used for debugging - outputs frequency every second
-static SoftwareSerial s_serial(RX_PIN, TX_PIN); // RX, TX (physical pins 11, 12)
+SoftwareSerial s_serial(RX_PIN, TX_PIN); // RX, TX (physical pins 11, 12)
 
 /*
  * Module private functions
