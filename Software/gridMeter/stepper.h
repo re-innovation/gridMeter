@@ -15,6 +15,7 @@ class Stepper {
 
     void enable();
     void disable();
+    bool enabled();
     
   private:
     void stepMotor(int this_step);
@@ -30,7 +31,7 @@ class Stepper {
     int motor_pin_4;
 
     unsigned long last_step_time; // time stamp in us of when the last step was taken
-    bool enabled;
+    bool _enabled;
 };
 
 #endif

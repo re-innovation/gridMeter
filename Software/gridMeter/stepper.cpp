@@ -77,24 +77,26 @@ void Stepper::step(int steps_to_move)
 
 void Stepper::enable()
 {
-  if (!this->enabled)
+  if (!this->_enabled)
   {
-    this->enabled = true;
+    this->_enabled = true;
     stepMotor(this->step_number % STEP_LIMIT);
   }
 }
 
 void Stepper::disable()
 {
-  if (this->enabled)
+  if (this->_enabled)
   {
-    this->enabled = false;
+    this->_enabled = false;
     digitalWrite(motor_pin_1, LOW);
     digitalWrite(motor_pin_2, LOW);
     digitalWrite(motor_pin_3, LOW);
     digitalWrite(motor_pin_4, LOW);
   }
 }
+
+bool Stepper::enabled() { return this->_enabled; }
 
 /*
  * Moves the motor forward or backwards (quarter stepping)
